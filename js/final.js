@@ -56,20 +56,12 @@ export function initFinalButtons() {
     }
 
     function showFinalMessage() {
-        document.body.innerHTML = `
-            <div style="
-                height:100vh;
-                display:flex;
-                justify-content:center;
-                align-items:center;
-                flex-direction:column;
-                background:black;
-                color:white;
-                text-align:center;
-            ">
-                <h1>❤️ Sabía que dirías que sí ❤️</h1>
-                <p>Te amo infinitamente 💕</p>
-            </div>
-        `;
+        const finalScreen = document.getElementById("finalScreen");
+
+        finalScreen.innerHTML = `
+        <h1>❤️ Sabía que dirías que sí ❤️</h1>
+        <p>Te amo infinitamente 💕</p>
+    `;
     }
 }
+

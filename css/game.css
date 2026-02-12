@@ -60,3 +60,21 @@
     }
 }
 
+/* Quitar resaltado azul en móviles */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Evitar selección accidental de texto */
+body {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+button, .click-heart {
+    outline: none;
+    border: none;
+    background: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
