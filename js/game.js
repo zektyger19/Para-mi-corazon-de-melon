@@ -30,10 +30,11 @@ function createHeart() {
     heart.classList.add("click-heart");
     heart.innerHTML = "💘";
 
-    const size = Math.random() * 30 + 30;
-    heart.style.fontSize = size + "px";
-    heart.style.left = Math.random() * (window.innerWidth - 50) + "px";
-    heart.style.top = Math.random() * (window.innerHeight - 100) + "px";
+    const rect = gameScreen.getBoundingClientRect();
+
+    heart.style.left = Math.random() * (rect.width - 50) + "px";
+    heart.style.top = Math.random() * (rect.height - 50) + "px";
+
 
     heart.addEventListener("click", () => {
         score++;
