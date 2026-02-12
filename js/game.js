@@ -42,10 +42,15 @@ function createHeart() {
     heart.addEventListener("click", () => {
         score++;
         document.getElementById("score").innerText = score;
-        heart.remove();
+
+        heart.classList.add("heart-pop");
+
+        setTimeout(() => {
+            heart.remove();
+        }, 300);
 
         if (score >= TARGET_SCORE) {
-            endGame(true);
+            setTimeout(() => endGame(true), 400);
         }
     });
 
