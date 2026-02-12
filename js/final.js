@@ -4,14 +4,25 @@ export function initFinalButtons() {
 
     if (!yesBtn || !noBtn) return;
 
-    // Botón que se mueve
-    noBtn.addEventListener("mouseover", () => {
-        const x = Math.random() * 200 - 100;
-        const y = Math.random() * 200 - 100;
-        noBtn.style.transform = `translate(${x}px, ${y}px)`;
-    });
+    const isMobile = window.innerWidth < 768;
 
-    // Botón definitivo
+    if (!isMobile) {
+        // 💻 PC → botón escapa
+        noBtn.addEventListener("mouseover", () => {
+            const x = Math.random() * 200 - 100;
+            const y = Math.random() * 200 - 100;
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    } else {
+        // 📱 Móvil → efecto divertido en vez de escapar
+        noBtn.addEventListener("click", () => {
+            noBtn.style.transform = "scale(1.2)";
+            setTimeout(() => {
+                noBtn.style.transform = "scale(1)";
+            }, 200);
+        });
+    }
+
     yesBtn.addEventListener("click", () => {
         document.body.innerHTML = `
             <div style="
