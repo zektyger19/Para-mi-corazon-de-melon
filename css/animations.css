@@ -1,0 +1,23 @@
+#finalScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+#typewriter {
+    font-size: 22px;
+    max-width: 600px;
+    line-height: 1.6;
+    white-space: pre-line;
+    border-right: 3px solid #ff4d6d;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { border-color: #ff4d6d; }
+    25%, 75% { border-color: transparent; }
+}

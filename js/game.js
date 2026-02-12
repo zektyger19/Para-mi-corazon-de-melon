@@ -116,7 +116,24 @@ function endGame(win) {
 
     if (win) {
         changeState(STATES.FINAL);
-    } else {
+
+        const music = document.getElementById("music");
+        if (music) {
+            music.play().catch(() => {});
+        }
+
+        setTimeout(() => {
+            import("./typewriter.js").then(module => {
+                module.startTypewriter(
+                    "Desde que llegaste a mi vida, todo tiene más color, más sentido y más amor... 💕\n\n¿Quieres seguir jugando este juego conmigo por siempre? ❤️",
+                    "typewriter",
+                    40
+                );
+            });
+        }, 500);
+    }
+
+    else {
         alert("Casi lo logras 😢 intenta de nuevo");
         startGame();
     }
