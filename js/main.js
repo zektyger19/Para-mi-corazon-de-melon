@@ -1,3 +1,5 @@
+import "./background.js";
+
 import { changeState, STATES } from "./stateManager.js";
 
 const startBtn = document.getElementById("startBtn");
