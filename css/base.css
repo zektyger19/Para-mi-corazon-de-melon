@@ -59,3 +59,43 @@ button:hover {
     left: 0;
     z-index: -1;
 }
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+
+.love-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.love-buttons button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#yesBtn {
+    background: #ff4d6d;
+    color: white;
+}
+
+#yesBtn:hover {
+    transform: scale(1.1);
+}
+
+#noBtn {
+    background: #ffc2d1;
+}

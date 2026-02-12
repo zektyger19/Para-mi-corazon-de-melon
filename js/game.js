@@ -1,4 +1,7 @@
 import { changeState, STATES } from "./stateManager.js";
+import("./final.js").then(module => {
+    module.initFinalButtons();
+});
 
 const gameScreen = document.getElementById("gameScreen");
 

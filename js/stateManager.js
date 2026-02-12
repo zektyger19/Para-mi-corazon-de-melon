@@ -1,29 +1,20 @@
 export const STATES = {
-    START: "start",
-    GAME: "game",
-    FINAL: "final"
-};
-
-let currentState = STATES.START;
-
-const screens = {
-    start: document.getElementById("startScreen"),
-    game: document.getElementById("gameScreen"),
-    final: document.getElementById("finalScreen")
+    START: "startScreen",
+    GAME: "gameScreen",
+    FINAL: "finalScreen"
 };
 
 export function changeState(newState) {
-    Object.values(screens).forEach(screen => {
+    // Ocultar todas las pantallas
+    document.querySelectorAll(".screen").forEach(screen => {
         screen.classList.add("hidden");
         screen.classList.remove("active");
     });
 
-    screens[newState].classList.remove("hidden");
-    screens[newState].classList.add("active");
-
-    currentState = newState;
-}
-
-export function getCurrentState() {
-    return currentState;
+    // Mostrar la pantalla seleccionada
+    const screenToShow = document.getElementById(newState);
+    if (screenToShow) {
+        screenToShow.classList.remove("hidden");
+        screenToShow.classList.add("active");
+    }
 }
