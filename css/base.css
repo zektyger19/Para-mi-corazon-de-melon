@@ -99,3 +99,23 @@ button:hover {
 #noBtn {
     background: #ffc2d1;
 }
+button {
+    background: linear-gradient(135deg, #ff4da6, #ff80bf);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 0, 120, 0.4);
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 0, 120, 0.6);
+}
+
+button:active {
+    transform: scale(0.95);
+}

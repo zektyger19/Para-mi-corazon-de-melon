@@ -71,10 +71,8 @@ body {
     -webkit-user-select: none;
 }
 
-button, .click-heart {
-    outline: none;
-    border: none;
-    background: none;
+.click-heart {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
 }
+
