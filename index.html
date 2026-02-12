@@ -4,14 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para mi corazón de melón ❤️</title>
-    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/game.css">
+    <link rel="stylesheet" href="./css/animations.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>Para mi corazón de melón ❤️</h1>
-    <p>Hay un nivel secreto esperando ser desbloqueado...</p>
-</div>
+<!-- Fondo animado -->
+<canvas id="background"></canvas>
+
+<!-- Estado START -->
+<section id="startScreen" class="screen active">
+    <h1>💌 Nivel Secreto</h1>
+    <p>Hay algo especial esperando por ti...</p>
+    <button id="startBtn">Tocar para comenzar ❤️</button>
+</section>
+
+<!-- Estado GAME -->
+<section id="gameScreen" class="screen hidden">
+    <h2>🎮 Atrapa 12 corazones</h2>
+    <p>Puntaje: <span id="score">0</span></p>
+</section>
+
+<!-- Estado FINAL -->
+<section id="finalScreen" class="screen hidden">
+    <h1>❤️ Nivel Completado ❤️</h1>
+    <p id="typewriter"></p>
+</section>
+
+<audio id="music" src="./assets/audio/music.mp3" loop></audio>
 
 <script type="module" src="./js/main.js"></script>
 </body>
