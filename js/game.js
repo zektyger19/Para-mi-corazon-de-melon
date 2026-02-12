@@ -1,6 +1,6 @@
 import { changeState, STATES } from "./stateManager.js";
 
-const gameScreen = document.getElementById("game-screen");
+const gameScreen = document.getElementById("gameScreen");
 
 let score = 0;
 let timeLeft = 20;
@@ -13,12 +13,7 @@ export function startGame() {
     score = 0;
     timeLeft = 20;
 
-    gameScreen.innerHTML = `
-        <div class="game-ui">
-            <div>💖 Puntos: <span id="score">${score}</span></div>
-            <div>⏳ Tiempo: <span id="timer">${timeLeft}</span></div>
-        </div>
-    `;
+    document.getElementById("score").innerText = score;
 
     spawnHearts();
     startTimer();
