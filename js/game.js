@@ -32,9 +32,12 @@ function createHeart() {
 
     const rect = gameScreen.getBoundingClientRect();
 
-    heart.style.left = Math.random() * (rect.width - 50) + "px";
-    heart.style.top = Math.random() * (rect.height - 50) + "px";
+    // 🔥 TAMAÑO DEL CORAZÓN
+    const size = Math.random() * 80 + 80; // entre 80px y 160px
+    heart.style.fontSize = size + "px";
 
+    heart.style.left = Math.random() * (rect.width - size) + "px";
+    heart.style.top = Math.random() * (rect.height - size) + "px";
 
     heart.addEventListener("click", () => {
         score++;
@@ -52,6 +55,7 @@ function createHeart() {
         heart.remove();
     }, 1500);
 }
+
 
 function startTimer() {
     gameInterval = setInterval(() => {
