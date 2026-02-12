@@ -15,8 +15,8 @@ export function startGame() {
 
     gameScreen.innerHTML = `
         <div class="game-ui">
-            <div class="score">💖 Puntos: <span id="score">${score}</span></div>
-            <div class="timer">⏳ Tiempo: <span id="timer">${timeLeft}</span></div>
+            <div>💖 Puntos: <span id="score">${score}</span></div>
+            <div>⏳ Tiempo: <span id="timer">${timeLeft}</span></div>
         </div>
     `;
 
