@@ -1,0 +1,26 @@
+.game-ui {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.click-heart {
+    position: absolute;
+    cursor: pointer;
+    animation: pop 0.3s ease;
+    transition: transform 0.2s;
+}
+
+.click-heart:hover {
+    transform: scale(1.2);
+}
+
+@keyframes pop {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
