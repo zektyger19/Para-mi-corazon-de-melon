@@ -6,23 +6,36 @@ export function initFinalButtons() {
 
     const isMobile = window.innerWidth < 768;
 
-    // 💘 Textos botón SÍ
+    //  Textos botón SÍ
     const yesTexts = [
-        "¿Estás segura? 😳",
-        "¿Totalmente segura? 😏",
-        "¿Segurísima? 💖",
-        "Mira que es para siempre 😌",
-        "Última oportunidad 😜",
-        "Bueno ya, acepto ❤️"
+        "¿Segura seguirismaaaaaa?",
+        "¿Totalmente segura miraaaaa?",
+        "¿De verdad? No me ilusiones :,v",
+        "Mira que es para siempre y no hay vuelta atras owo",
+        "Última oportunidad avisada estassss",
+        "Bueno ya, acepto te dejo que ganes por esta vez ya que yo siempre gano 7u7"
     ];
 
-    // 😈 Textos botón NO
+    // Textos botón NO
     const noTexts = [
-        "¿Segura que no? 🤨",
-        "Piénsalo bien 😅",
-        "No seas así 😢",
-        "Te vas a arrepentir 😏",
-        "Ok… lo respeto 😔"
+        "¿Como que no ctmre?",
+        "Tanto que me costo hacer esta wea",
+        "Pa que digas que no",
+        "Seas loca",
+        "nao",
+        "mi",
+        "pene",
+        "m",
+        "i",
+        "p",
+        "e",
+        "n",
+        "e",
+        "chupon",
+        "nao otra vez xd",
+        "hola",
+        "no tienes algo mejor que hacer, como darle click a CHI",
+
     ];
 
     let yesClickCount = 0;
@@ -40,11 +53,14 @@ export function initFinalButtons() {
 
     // 😈 BOTÓN NO cambia texto si logran hacer click
     noBtn.addEventListener("click", () => {
-        if (noClickCount < noTexts.length) {
-            noBtn.innerText = noTexts[noClickCount];
-            noClickCount++;
+        noBtn.innerText = noTexts[noClickCount];
+        noClickCount++;
+
+        if (noClickCount >= noTexts.length) {
+            noClickCount = 0; // 🔁 vuelve al inicio
         }
     });
+
 
     // 💻 Solo en PC el botón NO escapa
     if (!isMobile) {

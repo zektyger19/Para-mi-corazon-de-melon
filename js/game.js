@@ -1,3 +1,4 @@
+import { initFinalButtons } from "./final.js";
 import { changeState, STATES } from "./stateManager.js";
 import("./final.js").then(module => {
     module.initFinalButtons();
@@ -119,6 +120,7 @@ function endGame(win) {
 
     if (win) {
         changeState(STATES.FINAL);
+        initFinalButtons();
 
         const music = document.getElementById("music");
         if (music) {
@@ -128,7 +130,7 @@ function endGame(win) {
         setTimeout(() => {
             import("./typewriter.js").then(module => {
                 module.startTypewriter(
-                    "Desde que llegaste a mi vida, todo tiene más color, más sentido y más amor... 💕\n\n¿Quieres seguir jugando este juego conmigo por siempre? ❤️",
+                    "Como decia la frase 'yo no queria enamorarme pero es que con vos siempre es algo aparte' y la verdad que si toda las cosas que hemos vivido se volvio especial para mi, mi niña bonita de sonrisa hermosa y bonita y quiero seguir ahi para ti, para toda la vida, esta vez pienso un futuro contigo a tu lado mi amor TE AMO MUCHOOOOOOOOOO💕\n\n❤️¿Quieres ser mi novia Silvana nuevamente?❤️",
                     "typewriter",
                     40
                 );
@@ -137,7 +139,7 @@ function endGame(win) {
     }
 
     else {
-        alert("Casi lo logras 😢 intenta de nuevo");
+        alert("Oe pendeja no te hagas que son atrapar 15 corazones en 20 segundos aparte te los hice grande para que los veas psss oeeee. INTENTA DE NUEVO OE SUBNORMAL XD");
         startGame();
     }
 }
