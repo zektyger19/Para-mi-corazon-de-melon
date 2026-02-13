@@ -1,10 +1,7 @@
 import { initFinalButtons } from "./final.js";
 import { changeState, STATES } from "./stateManager.js";
-import("./final.js").then(module => {
-    module.initFinalButtons();
-});
-
 const gameScreen = document.getElementById("gameScreen");
+const heartSound = document.getElementById("heartSound");
 
 let score = 0;
 let timeLeft = 20;
@@ -72,6 +69,12 @@ function createHeart() {
     }, 16);
 
     heart.addEventListener("click", () => {
+
+        if (heartSound) {
+            heartSound.currentTime = 0;
+            heartSound.play().catch(() => {});
+        }
+
         score++;
         document.getElementById("score").innerText = score;
 
