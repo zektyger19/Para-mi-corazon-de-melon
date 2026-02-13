@@ -75,7 +75,7 @@ export function initFinalButtons() {
         const finalScreen = document.getElementById("finalScreen");
 
         finalScreen.innerHTML = `
-        <h1>❤️ Sabía que dirías que sí ❤️</h1>
+        <h1>Sabía que dirías que sí</h1>
         <p>Te amo infinitamente 💕</p>
     `;
     }
