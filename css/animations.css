@@ -21,3 +21,39 @@
     0%, 50%, 100% { border-color: #ff4d6d; }
     25%, 75% { border-color: transparent; }
 }
+.particle {
+    position: absolute;
+    pointer-events: none;
+    font-size: 20px;
+    animation: explode 600ms ease forwards;
+}
+
+@keyframes explode {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--x), var(--y)) scale(0.5);
+    }
+}
+
+.score-pop {
+    animation: scorePop 300ms ease;
+}
+
+@keyframes scorePop {
+    0% {
+        transform: scale(1);
+        color: white;
+    }
+    50% {
+        transform: scale(1.5);
+        color: #ff4d6d;
+    }
+    100% {
+        transform: scale(1);
+        color: white;
+    }
+}

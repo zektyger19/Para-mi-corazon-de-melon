@@ -33,6 +33,27 @@ function createHeart() {
 
     const rect = gameScreen.getBoundingClientRect();
 
+    function createParticles(x, y) {
+        for (let i = 0; i < 6; i++) {
+            const particle = document.createElement("div");
+            particle.classList.add("particle");
+            particle.innerHTML = "💖";
+
+            const offsetX = (Math.random() - 0.5) * 150;
+            const offsetY = (Math.random() - 0.5) * 150;
+
+            particle.style.left = x + "px";
+            particle.style.top = y + "px";
+            particle.style.setProperty("--x", offsetX + "px");
+            particle.style.setProperty("--y", offsetY + "px");
+
+            gameScreen.appendChild(particle);
+
+            setTimeout(() => particle.remove(), 600);
+        }
+    }
+
+
     // 🎯 Tamaño adaptado a móvil
     const isMobile = window.innerWidth < 768;
     const size = isMobile
@@ -74,9 +95,19 @@ function createHeart() {
             heartSound.currentTime = 0;
             heartSound.play().catch(() => {});
         }
+        const rect = heart.getBoundingClientRect();
+        createParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
 
         score++;
-        document.getElementById("score").innerText = score;
+
+        const scoreElement = document.getElementById("score");
+        scoreElement.innerText = score;
+
+        scoreElement.classList.add("score-pop");
+
+        setTimeout(() => {
+            scoreElement.classList.remove("score-pop");
+        }, 300);
 
         clearInterval(moveInterval);
 
